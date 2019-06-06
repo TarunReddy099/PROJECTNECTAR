@@ -30,17 +30,14 @@ export default class App extends Component<Props> {
         return (
             <View style = {styles.container}>
                 <TextInput style = {styles.input}
-                           underlineColorAndroid = "transparent"
                            placeholder = "Email"
                            placeholderTextColor = "#9a73ef"
-                           autoCapitalize = "none"
                            onChangeText = {this.handleEmail}/>
 
                 <TextInput style = {styles.input}
-                           underlineColorAndroid = "transparent"
                            placeholder = "Password"
                            placeholderTextColor = "#9a73ef"
-                           autoCapitalize = "none"
+                           secureTextEntry={true}
                            onChangeText = {this.handlePassword}/>
 
                 <TouchableOpacity
