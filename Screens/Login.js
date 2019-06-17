@@ -1,18 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native';
+import {Button} from "react-native-paper";
 
 
 type Props = {};
 export default class App extends Component<Props> {
+    static navigationOption = {
+        title : 'Loginscreen',
+    };
     state = {
         email: '',
         password: ''
@@ -28,8 +24,12 @@ export default class App extends Component<Props> {
     }
 
     render() {
+
+    console.log("this.props.navigation = "+util.inspect(this.props.navigation,false,null));
+    var{navigate} = this.props.navigation;
         return (
             <View style = {styles.container}>
+
                 <TextInput style = {styles.input}
                            placeholder = "Email"
                            placeholderTextColor = "#9a73ef"
@@ -48,6 +48,14 @@ export default class App extends Component<Props> {
                     }>
                     <Text style = {styles.submitButtonText}> Submit </Text>
                 </TouchableOpacity>
+                <Button
+                    onPress={
+                        () => navigate("Second",{})
+                    }
+                    title="SignUP"
+                    }
+                }
+                }>
             </View>
         );
     }

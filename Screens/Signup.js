@@ -7,6 +7,9 @@ import {
 } from 'react-native'
 
 export default class Signup extends React.Component {
+    static navigationOption = {
+        title : 'Signupscreen',
+    };
     state = {
         username: '', password: '', email: '', phone_number: ''
     }
@@ -24,6 +27,9 @@ export default class Signup extends React.Component {
     }
 
     render() {
+
+        console.log("this.props.navigation = "+util.inspect(this.props.navigation,false,null));
+        var {params} = this.props.navigation.state
         return (
             <View style={styles.container}>
                 <TextInput
@@ -67,6 +73,8 @@ export default class Signup extends React.Component {
                     onPress={this.signUp}
                 />
             </View>
+
+
         )
     }
 }
